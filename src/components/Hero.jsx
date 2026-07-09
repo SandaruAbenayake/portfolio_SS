@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiTerminal, FiGithub, FiArrowRight } from 'react-icons/fi';
+import { FiTerminal, FiGithub, FiLinkedin, FiArrowRight } from 'react-icons/fi';
 import { HashLink } from 'react-router-hash-link';
 import { profile, social } from '../data/portfolio.js';
 
@@ -61,7 +61,7 @@ export default function Hero() {
             animate="show"
             custom={2}
           >
-            <span className="accent-magenta">&lt;Architect /&gt;</span> {profile.tagline}.{' '}
+            <span className="accent-magenta">&lt;Software Engineer /&gt;</span> {profile.tagline}.{' '}
             {profile.blurb}
           </motion.p>
 
@@ -72,14 +72,18 @@ export default function Hero() {
             animate="show"
             custom={3}
           >
-            <HashLink smooth to="#projects" className="btn btn--primary">
+            <a href={profile.resumeUrl} target="_blank" rel="noreferrer" className="btn btn--primary">
               <FiTerminal />
               <span>View Resume</span>
               {/* <span className="btn__hint">sudo boot_gui</span> */}
-            </HashLink>
+            </a>
             <a href={social.github} target="_blank" rel="noreferrer" className="btn btn--ghost">
               <FiGithub />
-              <span></span>
+              <span>GitHub</span>
+            </a>
+            <a href={social.linkedin} target="_blank" rel="noreferrer" className="btn btn--ghost">
+              <FiLinkedin />
+              <span>LinkedIn</span>
             </a>
           </motion.div>
 
@@ -141,7 +145,7 @@ export default function Hero() {
             <button className="editor__run">
               <FiArrowRight /> Run Profile
             </button>
-            <HashLink smooth to="https://docs.google.com/document/d/1ZyLgd4Z44Uq0y0C4trB14UB5ULp88nKcZ5wP9UafHi4/edit?usp=sharing" className="editor__view">
+            <HashLink smooth to="https://github.com/SandaruAbenayake?tab=repositories" className="editor__view">
               View Projects
             </HashLink>
           </div>

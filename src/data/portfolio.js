@@ -12,7 +12,7 @@ export const profile = {
   kernelVersion: 'v2.8.0',
   location: 'Sri Lanka · Remote . Onsite',
   status: 'ONLINE',
-  resumeUrl: 'https://docs.google.com/document/d/1ZyLgd4Z44Uq0y0C4trB14UB5ULp88nKcZ5wP9UafHi4/edit?usp=sharing', // drop a resume.pdf into /public, or change this link
+  resumeUrl: 'https://docs.google.com/document/d/1ZyLgd4Z44Uq0y0C4trB14UB5ULp88nKcZ5wP9UafHi4/edit?tab=t.0', // drop a resume.pdf into /public, or change this link
   avatar: '/images/avatar.jpeg', // drop your photo into /public/images/avatar.jpeg
   // Modules shown scrolling under the hero
   loadedModules: ['PHP', 'REACT', 'PYTHON', 'SQL','DOCKER'],
@@ -41,13 +41,13 @@ export const about = {
     },
     {
       cmd: 'experience',
-      out: 'Turning complex product requirements into robust technical solutions. Currently building education platforms with React, Flask, PostgreSQL and Azure.',
+      out: 'Creating scalable web solutions with React, Node.js, PHP, and modern database technologies. Experienced in building custom WordPress solutions, full-stack applications, and API-driven platforms focused on performance and usability.',
     },
   ],
   stats: [
-    { label: 'EXPERIENCE', value: '3+', unit: 'YRS' },
+    { label: 'EXPERIENCE', value: '1+', unit: 'YRS' },
     { label: 'PROJECTS', value: '15+', unit: 'DEP' },
-    { label: 'CAFFEINE', value: '∞', unit: 'ml' },
+    // { label: 'CAFFEINE', value: '∞', unit: 'ml' },
   ],
 };
 
@@ -117,13 +117,13 @@ export const projects = [
     name: 'Palm Harvest Pro',
     visibility: 'Public',
     description:
-      'A production-ready Python inference service for agricultural AI, delivering palm bunch harvest forecasts through a REST API integrated with a Node.js backend.',
+      'An AI-powered agricultural solution developed as my final-year project, combining machine learning inference with a scalable Python API and Node.js backend to deliver intelligent palm bunch harvest predictions.',
     stack: ['Python', 'TensorFlow', 'PyTorch', 'YOLO', 'Node.js', 'Docker', 'SQL'],
     language: 'Python',
     languageColor: '#3572A5',
     stars: 42,
     forks: 13,
-    repo: '#',
+    repo: 'https://github.com/Final-Year-Research-Oil-Plam',
     demo: '#',
     pinned: true,
   },
@@ -137,7 +137,7 @@ export const projects = [
     languageColor: '#f1e05a',
     stars: 36,
     forks: 8,
-    repo: '#',
+    repo: 'https://github.com/SandaruAbenayake/SK_saloon',
     demo: '#',
     pinned: true,
   },
@@ -151,7 +151,7 @@ export const projects = [
     languageColor: '#4f5d95',
     stars: 28,
     forks: 5,
-    repo: '#',
+    repo: 'https://github.com/SandaruAbenayake/MunchMix',
     demo: '#',
     pinned: true,
   },
@@ -165,7 +165,7 @@ export const projects = [
     languageColor: '#f1e05a',
     stars: 32,
     forks: 7,
-    repo: '#',
+    repo: 'https://github.com/SandaruAbenayake/Student-Registration-Web-Application-MERN',
     demo: '#',
     pinned: true,
   },
@@ -179,7 +179,7 @@ export const projects = [
     languageColor: '#b07219',
     stars: 22,
     forks: 4,
-    repo: '#',
+    repo: 'https://github.com/SandaruAbenayake/pahana_edu',
     demo: '#',
     pinned: true,
   },
@@ -199,7 +199,7 @@ export const blogs = [
 // --- Contact ----------------------------------------------------------------
 export const contact = {
   status: 'available',
-  email: 'you@example.com',
-  location: 'Remote',
+  email: 'maggonageabenayake@gmail.com',
+  location: 'Remote . Onsite',
   responseTime: 'within 24h',
 };

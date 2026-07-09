@@ -63,6 +63,11 @@ export default function Projects() {
                 <span className="repo__stat">
                   <FiGitBranch /> {p.forks}
                 </span>
+                {p.repo && p.repo !== '#' && (
+                  <a href={p.repo} target="_blank" rel="noreferrer" className="repo__demo">
+                    <FiGitBranch /> Repo
+                  </a>
+                )}
                 {p.demo && p.demo !== '#' && (
                   <a href={p.demo} target="_blank" rel="noreferrer" className="repo__demo">
                     <FiExternalLink /> Demo
