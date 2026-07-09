@@ -12,7 +12,7 @@ export const profile = {
   kernelVersion: 'v2.8.0',
   location: 'Sri Lanka · Remote . Onsite',
   status: 'ONLINE',
-  resumeUrl: 'https://docs.google.com/document/d/1ZyLgd4Z44Uq0y0C4trB14UB5ULp88nKcZ5wP9UafHi4/edit?tab=t.0', // drop a resume.pdf into /public, or change this link
+  resumeUrl: 'https://drive.google.com/drive/folders/1-7DrruaGi1bl7j9BRKAweuoaGSrFlnw7', // drop a resume.pdf into /public, or change this link
   avatar: '/images/avatar.jpeg', // drop your photo into /public/images/avatar.jpeg
   // Modules shown scrolling under the hero
   loadedModules: ['PHP', 'REACT', 'PYTHON', 'SQL','DOCKER'],
