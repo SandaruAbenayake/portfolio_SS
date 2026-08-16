@@ -96,19 +96,19 @@ export const experience = [
     deletions: 56,
     files: 5,
   },
-  {
-    hash: 'b2c3a4d',
-    head: false,
-    company: 'Richard Pieris and Company PLC',
-    period: 'Nov 2022 — July 2024',
-    title: 'Account Assistant @ Richard Pieris and Company PLC',
-    description:
-      'Supported day-to-day accounting tasks including data entry, invoice processing, and maintaining accurate financial records to help ensure timely reporting and smooth finance operations.',
-    stack: ['Accounting', 'Data Entry', 'Invoice Processing', 'Finance'],
-    insertions: 194,
-    deletions: 22,
-    files: 4,
-  },
+  // {
+  //   hash: 'b2c3a4d',
+  //   head: false,
+  //   company: 'Richard Pieris and Company PLC',
+  //   period: 'Nov 2022 — July 2024',
+  //   title: 'Account Assistant @ Richard Pieris and Company PLC',
+  //   description:
+  //     'Supported day-to-day accounting tasks including data entry, invoice processing, and maintaining accurate financial records to help ensure timely reporting and smooth finance operations.',
+  //   stack: ['Accounting', 'Data Entry', 'Invoice Processing', 'Finance'],
+  //   insertions: 194,
+  //   deletions: 22,
+  //   files: 4,
+  // },
 ];
 
 // --- Projects (GitHub-repo styled cards) ------------------------------------
