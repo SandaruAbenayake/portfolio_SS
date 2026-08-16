@@ -214,14 +214,69 @@ export const projects = [
 ];
 
 // --- Blogs (optional — leave empty for the empty-state) ---------------------
+// Cards with a `sections` array open in a popup instead of navigating to `url`.
 export const blogs = [
-  // {
-  //   title: 'Setting up GitOps migrations on Azure PostgreSQL',
-  //   excerpt: 'A walk-through of Flyway + Azure DevOps with Entra token auth.',
-  //   date: '2026-05-01',
-  //   url: '#',
-  //   tags: ['Azure', 'PostgreSQL', 'DevOps'],
-  // },
+  {
+    title: 'Smart Harvesting System for Oil Palm Plantations',
+    excerpt:
+      'A mobile + web ML pipeline that reads fruit-bunch color to predict the optimal oil palm harvest day — my final-year dissertation.',
+    date: 'March 2026',
+    icon: '/images/icon.png',
+    tags: ['Machine Learning', 'YOLO', 'React Native', 'FastAPI', 'Dissertation'],
+    meta: [
+      { label: 'Author', value: 'M. S. N. Abenayake (st20284499)' },
+      { label: 'Institution', value: 'Cardiff Metropolitan University (via ICBT)' },
+      { label: 'Degree', value: 'BSc (Hons) Software Engineering' },
+      { label: 'Supervisor', value: 'Mr. Roy Ian' },
+    ],
+    sections: [
+      {
+        heading: 'Core Idea',
+        body: [
+          'Oil palm harvesting in Sri Lanka is done manually — workers visually judge fruit-bunch ripeness by color, which is inconsistent, error-prone, and dangerous (trees are 10–20m tall). Misjudging ripeness directly hurts Oil Extraction Rate (OER), the key profitability metric for producers like Namunukula Plantations PLC, whose IT Manager provided industry input.',
+          'The proposed solution — PalmHarvest Pro — is a mobile + web system that lets field workers photograph a fruit bunch and get back an automated ripeness assessment and a predicted optimal harvest day, not just "ripe / not ripe".',
+        ],
+      },
+      {
+        heading: 'Technical Approach',
+        body: ['A three-stage ML pipeline is the report’s most original contribution:'],
+        list: [
+          'Detection (YOLO, Roboflow-annotated dataset) — locates the bunch in the image, returns bounding box + confidence.',
+          'Classification (YOLO11n-cls) — classifies the crop into ripe / unripe / overripe / damaged. Reached 95.6% top-1 accuracy on 184 train / 68 val images, though "unripe" recall (71%) trailed "ripe" (96%) — likely class imbalance or visual similarity.',
+          'Color-rule day estimator (day_from_hex.py) — converts every pixel in the detected region to hex/RGB, compares distributions against predefined color ranges for day-classes (2d, 4d, 12d, 16d), and maps the winning class to a harvest-day label with disambiguation logic between close classes.',
+        ],
+      },
+      {
+        heading: 'System Architecture',
+        list: [
+          'Mobile app — React Native + Expo + TypeScript: login, tree/QR management, photo capture, instant predictions (e.g. "Day 12 — Ready for harvest in 12 days").',
+          'Backend — Node.js/Express + MySQL: route→controller→DB pattern, auth, Cloudinary image uploads, calls the ML service, transactional storage with graceful failure handling.',
+          'ML service — Python/FastAPI + Ultralytics YOLO: exposes /palm/detect-from-url, runs the pipeline, returns JSON (count, coordinates, class, confidence, final_date).',
+          'Web dashboard — React + Vite: KPIs, trends, block distribution, recent predictions, user/block/tree management, QR code generation.',
+        ],
+      },
+      {
+        heading: 'Planning & Methodology',
+        body: [
+          'Agile methodology over a ~21-week timeline (requirement analysis → design → 6wk ML development → 6wk app development → testing → deployment → docs), backed by full feasibility (technical/operational/economic/environmental-social), risk assessment, SWOT, and PESTEL analysis.',
+        ],
+      },
+      {
+        heading: 'Testing',
+        body: [
+          '10 test cases (TC01–TC10) covering login, block/tree selection, image capture/upload, detection, classification, DB storage, dashboard display, QR scan, and error handling — all marked Pass, with screenshot evidence in the appendix.',
+        ],
+      },
+      {
+        heading: 'Limitations & Honesty Points',
+        list: [
+          'Small training dataset — only 184 images across 4 classes.',
+          'The test split had zero images, so the validation set doubled as the evaluation set.',
+          'Future work: larger datasets, model accuracy improvements, offline mobile prediction, and GIS integration for block/tree mapping.',
+        ],
+      },
+    ],
+  },
 ];
 
 // --- Contact ----------------------------------------------------------------

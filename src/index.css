@@ -890,6 +890,9 @@ main {
   background: var(--panel);
   padding: 22px;
   transition: border-color 0.2s, transform 0.2s;
+  text-align: left;
+  width: 100%;
+  color: inherit;
 }
 .blog-card:hover {
   border-color: var(--cyan);
@@ -897,13 +900,22 @@ main {
 }
 .blog-card__head {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   gap: 12px;
   margin-bottom: 10px;
+}
+.blog-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
 }
 .blog-card__title {
   font-family: var(--font-display);
   font-size: 1.1rem;
+  flex: 1;
 }
 .blog-card__ext { color: var(--text-faint); flex-shrink: 0; }
 .blog-card__excerpt {
@@ -916,11 +928,128 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .blog-card__date {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-faint);
+}
+
+/* ---- blog popup ---------------------------------------------------------- */
+.blog-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(5, 8, 12, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.blog-modal {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+.blog-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.blog-modal__close:hover { color: var(--cyan); border-color: var(--cyan); }
+.blog-modal__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: 40px;
+  margin-bottom: 6px;
+}
+.blog-modal__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.blog-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+.blog-modal__date {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+}
+.blog-modal__tags { margin: 16px 0 20px; }
+.blog-modal__body {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.blog-modal__meta {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 22px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+.blog-modal__meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 10px;
+}
+.blog-modal__meta-row dt { color: var(--text-faint); }
+.blog-modal__meta-row dd { color: var(--text-dim); }
+.blog-modal__section { margin-bottom: 20px; }
+.blog-modal__section:last-child { margin-bottom: 0; }
+.blog-modal__section h4 {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+.blog-modal__section p {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+}
+.blog-modal__section p:last-child { margin-bottom: 0; }
+.blog-modal__section ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.blog-modal__section li {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  padding-left: 18px;
+  position: relative;
+}
+.blog-modal__section li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
 }
 
 /* ===========================================================================
@@ -1111,6 +1240,15 @@ main {
   .field-row { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .footer__inner { flex-direction: column; text-align: center; }
+
+  .blog-modal-overlay { padding: 0; align-items: flex-end; }
+  .blog-modal {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 24px 20px;
+  }
+  .blog-modal__meta-row { grid-template-columns: 90px 1fr; }
 }
 
 /* ---- accessibility ------------------------------------------------------ */
