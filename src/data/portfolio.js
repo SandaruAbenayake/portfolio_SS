@@ -224,6 +224,80 @@ export const projects = [
 // Cards with a `sections` array open in a popup instead of navigating to `url`.
 export const blogs = [
   {
+    title: "Why Manual Visual Inspection Doesn't Scale — and What to Automate First",
+    excerpt:
+      'A lesson from building Palm Harvest Pro: why manual visual inspection breaks down at scale, and how to decide what actually needs machine learning versus a simple rule.',
+    date: 'August 2026',
+    icon: '/images/icon.png',
+    tags: ['Machine Learning', 'Computer Vision', 'Engineering', 'Automation'],
+    sections: [
+      {
+        heading: 'Introduction',
+        body: [
+          'Many industries still depend on someone standing in front of a product — a crate of fruit, a sheet of material, a finished part — and judging it by eye. It works. It\'s cheap to set up, needs no infrastructure, and for a small operation it\'s often the right call. The problem shows up later, once volume grows and that same judgment call has to happen hundreds or thousands of times a day.',
+          'I ran into this directly while building Palm Harvest Pro, a system for predicting when oil palm fruit bunches are ready to harvest. But the pattern I saw there — a manual, visual, subjective process breaking down under scale — isn\'t specific to agriculture. It shows up in manufacturing QA, food sorting, warehouse intake, even code review. This is about that general problem, using the palm project as one concrete example, not the whole story.',
+        ],
+      },
+      {
+        heading: 'Why manual inspection becomes difficult at scale',
+        body: [
+          'Three things break down as volume increases, and they\'re worth naming separately because each one needs a different fix:',
+        ],
+        list: [
+          'Speed — a person can only look at so many items per hour. Throughput is capped by human attention, not by demand.',
+          'Consistency — the same judgment call ("is this ripe," "is this defective") varies from person to person, and even from the same person across a shift as fatigue sets in.',
+          'Traceability — a verbal or mental judgment leaves no record. When something goes wrong downstream, there\'s no way to go back and ask why a specific item was passed or rejected.',
+        ],
+      },
+      {
+        heading: 'Real-world example: palm fruit ripeness detection',
+        body: [
+          'In oil palm plantations, harvest timing is judged by the color of the fruit bunch. Workers climb or inspect 10–20 meter trees and make a call based on experience. Get it wrong — too early or too late — and the Oil Extraction Rate (OER), the metric that determines how much usable oil comes out of a harvest, drops. It\'s also genuinely dangerous work: the judgment is happening at height, under time pressure, at volume.',
+          'Palm Harvest Pro\'s starting point was simple: let a worker photograph a bunch instead of eyeballing it, and have the system return a ripeness class and a predicted harvest-ready day. The goal was never to remove the worker from the loop — it was to replace an inconsistent visual judgment with a repeatable one, and to leave a photographic record behind for every decision.',
+        ],
+      },
+      {
+        heading: 'How automation and computer vision can help',
+        body: [
+          'Once you photograph something instead of just looking at it, you get two things for free that manual inspection doesn\'t have: a fixed record, and a repeatable input to run any kind of analysis against. That\'s the actual value of automating this step — not that a machine "sees better" than a person, but that the same input produces the same output every time, and you can audit it later.',
+          'Computer vision is one way to process that photo. It\'s useful when the thing you\'re classifying has enough visual variation that writing explicit rules for it is hard — subtle color gradients, overlapping categories, inconsistent lighting and angles. That describes ripeness classification reasonably well: "ripe," "unripe," "overripe," and "damaged" aren\'t cleanly separated by any single measurement.',
+        ],
+      },
+      {
+        heading: 'When machine learning is worth it',
+        body: [
+          'Machine learning earns its complexity when the categories are visually fuzzy, you have real examples to learn from, and the cost of an occasional wrong call is recoverable rather than catastrophic.',
+          'It\'s worth being honest about what that looks like in practice. The classification model in Palm Harvest Pro reached about 95% accuracy overall — on a small dataset, a few hundred images across four classes — but performance wasn\'t even across classes. "Ripe" was detected reliably; "unripe" was harder, likely because it looks visually similar to other stages. That\'s a normal outcome for a first model on limited data, not a failure, but it\'s also not a number to extrapolate from. A model like this is a decision aid a worker can lean on, not a replacement for judgment, and it needs more data and field validation before anyone should trust it unsupervised.',
+        ],
+      },
+      {
+        heading: 'When simple rules or image processing are enough',
+        body: [
+          'Not every visual problem needs a trained model. If the thing you\'re checking has a fixed, well-defined signature — a size threshold, a specific color range, a shape that traditional edge detection can pick out — a model is often overkill. Simple rules are easier to explain to a non-technical stakeholder, easier to debug when they\'re wrong, run on cheap hardware without a GPU, and don\'t need a labeled dataset to get started.',
+          'Palm Harvest Pro actually uses both, and that split is deliberate. Detecting and classifying the bunch — the fuzzy part — uses a trained model. But the final harvest-day estimate is a straightforward color-rule system: convert the detected region\'s pixels to hex values, compare the distribution against predefined color ranges for known ripeness stages, and pick the best match. No model needed for that step, because the categories are well-defined enough that rules do the job — and rules are far easier to inspect and correct when they\'re wrong.',
+        ],
+      },
+      {
+        heading: 'The real engineering lesson: automate the right problem first',
+        body: [
+          'The temptation on any project like this is to reach for the most advanced tool available and apply it everywhere. The more useful question is narrower: which specific step is actually the bottleneck, and what kind of problem is it? A short checklist that\'s held up across projects:',
+        ],
+        list: [
+          'What breaks first as volume grows — speed, consistency, or record-keeping?',
+          'If the automated call is wrong sometimes, is that recoverable, or does it cause real damage?',
+          'Is there enough real-world data to train something, or would rules get you 90% of the way there today?',
+          'Can the categories be described with explicit thresholds, or do they genuinely require learned pattern recognition?',
+        ],
+      },
+      {
+        heading: 'Conclusion',
+        body: [
+          'Manual inspection isn\'t wrong at small scale — it just doesn\'t hold up as volume grows, because speed, consistency, and traceability all degrade at the same time. Fixing that doesn\'t mean adding AI everywhere; it means identifying the specific step that\'s actually the bottleneck and matching the simplest tool that solves it, whether that\'s a trained model or a handful of hex-value comparisons. That judgment call — not the model itself — is the actual engineering work.',
+        ],
+      },
+    ],
+  },
+  {
     title: 'Smart Harvesting System for Oil Palm Plantations',
     excerpt:
       'A mobile + web ML pipeline that reads fruit-bunch color to predict the optimal oil palm harvest day — my final-year dissertation.',
