@@ -116,6 +116,7 @@ export const projects = [
   {
     name: 'Palm Harvest Pro',
     visibility: 'Public',
+    category: 'Uni Final Year Project',
     description:
       'An AI-powered agricultural solution developed as my final-year project, combining machine learning inference with a scalable Python API and Node.js backend to deliver intelligent palm bunch harvest predictions.',
     stack: ['Python', 'TensorFlow', 'PyTorch', 'YOLO', 'Node.js', 'Docker', 'SQL'],
@@ -130,6 +131,7 @@ export const projects = [
   {
     name: 'Java Spring Boot + React',
     visibility: 'Public',
+    category: 'Self Learning Project',
     description:
       'A full-stack web application with a Java Spring Boot backend and a React frontend, demonstrating REST API design and client-server integration.',
     stack: ['Java', 'Spring Boot', 'React', 'JavaScript', 'REST API'],
@@ -144,6 +146,7 @@ export const projects = [
   {
     name: 'MunchMix',
     visibility: 'Public',
+    category: 'Uni Project',
     description:
       'An online food ordering platform for restaurants featuring a dynamic menu and MySQL database management for orders and inventory.',
     stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
@@ -158,6 +161,7 @@ export const projects = [
   {
     name: 'Pahana Edu',
     visibility: 'Public',
+    category: 'Uni Project',
     description:
       'A desktop bookshop management system built with Java Servlets and JDBC, designed to manage books, customers, and orders with strong OOP architecture.',
     stack: ['Java', 'Servlets', 'MySQL', 'JDBC'],
@@ -172,6 +176,7 @@ export const projects = [
   {
     name: 'SK Salon',
     visibility: 'Public',
+    category: 'Self Learning Project',
     description:
       'A salon booking system with separate customer and admin portals, mock payment webhook simulation, JWT authentication, and owner dashboard for booking approvals and schedule management.',
     stack: ['React', 'Node.js', 'Express', 'MySQL', 'JWT', 'Material-UI'],
@@ -186,6 +191,7 @@ export const projects = [
   {
     name: 'Flutter Restaurant App',
     visibility: 'Public',
+    category: 'Uni Project',
     description:
       'A mobile restaurant ordering system built with Flutter, featuring menu browsing and an ordering flow for customers.',
     stack: ['Flutter', 'Dart'],
@@ -200,6 +206,7 @@ export const projects = [
   {
     name: 'Pet System',
     visibility: 'Public',
+    category: 'Client Project',
     description:
       'A pet shop management system built with core Java and OOP principles, supporting full CRUD operations for a client project.',
     stack: ['Java', 'OOP'],

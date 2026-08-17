@@ -4,6 +4,13 @@ import { FiStar, FiGitBranch, FiExternalLink, FiLock, FiGlobe } from 'react-icon
 import { projects, social } from '../data/portfolio.js';
 import SectionHeading from './SectionHeading.jsx';
 
+const categoryColor = {
+  'Client Project': 'magenta',
+  'Uni Final Year Project': 'cyan',
+  'Self Learning Project': 'green',
+  'Uni Project': 'amber',
+};
+
 export default function Projects() {
   return (
     <section id="projects" className="section">
@@ -38,6 +45,12 @@ export default function Projects() {
                   {p.visibility}
                 </span>
               </div>
+
+              {p.category && (
+                <span className={`repo__category repo__category--${categoryColor[p.category] || 'cyan'}`}>
+                  {p.category}
+                </span>
+              )}
 
               <p className="repo__desc">{p.description}</p>
 
