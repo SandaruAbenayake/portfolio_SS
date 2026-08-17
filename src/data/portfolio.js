@@ -13,7 +13,7 @@ export const profile = {
   location: 'Sri Lanka · Remote . Onsite',
   status: 'ONLINE',
   resumeUrl: 'https://drive.google.com/file/d/15oooGs58y0SPBOtbbwLFHqFrpsm3JfPB/view?usp=sharing', // drop a resume.pdf into /public, or change this link
-  avatar: '/images/avatar.jpeg', // drop your photo into /public/images/avatar.jpeg
+  avatar: '/images/dev.jpg', // drop your photo into /public/images/dev.jpg
   // Modules shown scrolling under the hero
   loadedModules: ['PHP', 'REACT', 'PYTHON', 'SQL','DOCKER'],
 };
