@@ -71,13 +71,26 @@ export const skills = [
 // --- Experience (rendered as a git log) -------------------------------------
 export const experience = [
   {
-    hash: 'd4f5c6a',
+    hash: 'e5a6d7b',
     head: true,
     company: 'Domedia',
-    period: 'July 2025 — Present',
-    title: 'Full Stack Developer @ Domedia',
+    period: 'January 2026 — Present',
+    title: 'Trainee Full Stack Developer @ Domedia',
     description:
-      'Engineered custom WordPress themes and plugins with SEO optimization and WooCommerce integration to improve site functionality, search visibility, and e-commerce performance.',
+      'Independently developing custom WordPress themes and plugins and managing WooCommerce e-commerce solutions end-to-end, while delivering SEO-optimized responsive pages and owning client communication, maintenance, and workflow improvements across projects.',
+    stack: ['WordPress', 'WooCommerce', 'HTML', 'CSS', 'JavaScript', 'SEO'],
+    insertions: 340,
+    deletions: 78,
+    files: 6,
+  },
+  {
+    hash: 'd4f5c6a',
+    head: false,
+    company: 'Domedia',
+    period: 'July 2025 — December 2025',
+    title: 'Full Stack Developer Intern @ Domedia',
+    description:
+      'Assisted in building and customizing WordPress themes, plugins, and page builders for client websites, supporting WooCommerce integration and responsive page development while applying on-page SEO practices and helping senior developers with client-facing bug fixes and maintenance.',
     stack: ['WordPress', 'WooCommerce', 'HTML', 'CSS', 'JavaScript', 'SEO'],
     insertions: 520,
     deletions: 114,

@@ -694,17 +694,17 @@ main {
 .commit__line {
   position: absolute;
   top: 18px;
-  bottom: -24px;
+  bottom: -14px;
   width: 2px;
   background: var(--border-bright);
 }
-.commit__body { padding-bottom: 34px; }
+.commit__body { padding-bottom: 22px; }
 .commit__head {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .commit__hash {
   font-family: var(--font-mono);
@@ -722,18 +722,19 @@ main {
 .commit__period {
   font-family: var(--font-mono);
   font-size: 0.74rem;
-  color: var(--text-faint);
+  color: var(--amber);
+  font-weight: 600;
   margin-left: auto;
 }
 .commit__title {
   font-family: var(--font-display);
   font-size: 1.15rem;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .commit__desc {
   color: var(--text-dim);
   font-size: 0.96rem;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 .commit__stat {
   display: flex;
@@ -742,7 +743,7 @@ main {
   font-family: var(--font-mono);
   font-size: 0.74rem;
   color: var(--text-faint);
-  margin-top: 12px;
+  margin-top: 6px;
 }
 .stat-add { color: var(--green); }
 .stat-del { color: var(--red); }
