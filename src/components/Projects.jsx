@@ -8,6 +8,7 @@ const categoryColor = {
   'Client Project': 'magenta',
   'Uni Final Year Project': 'cyan',
   'Self Learning Project': 'green',
+  'SaaS Project · Self Learning': 'green',
   'Uni Project': 'amber',
 };
 
@@ -46,10 +47,15 @@ export default function Projects() {
                 </span>
               </div>
 
-              {p.category && (
-                <span className={`repo__category repo__category--${categoryColor[p.category] || 'cyan'}`}>
-                  {p.category}
-                </span>
+              {(p.category || p.status) && (
+                <div className="repo__categories">
+                  {p.category && (
+                    <span className={`repo__category repo__category--${categoryColor[p.category] || 'cyan'}`}>
+                      {p.category}
+                    </span>
+                  )}
+                  {p.status && <span className="repo__category repo__category--amber">{p.status}</span>}
+                </div>
               )}
 
               <p className="repo__desc">{p.description}</p>

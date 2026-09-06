@@ -157,6 +157,22 @@ export const projects = [
     pinned: true,
   },
   {
+    name: 'RentFlow',
+    visibility: 'Public',
+    category: 'SaaS Project · Self Learning',
+    status: 'Ongoing',
+    description:
+      'A white-label, multi-tenant vehicle-rental SaaS platform in active development. It brings fleet management, bookings, payments, subscriptions, and role-based dashboards for owners, employees, and customers into one unified system.',
+    stack: ['React', 'Java', 'Spring Boot', 'MySQL', 'Multi-tenancy', 'RBAC', 'Payments'],
+    language: 'Java',
+    languageColor: '#b07219',
+    stars: 0,
+    forks: 0,
+    repo: 'https://github.com/Saas-Rent',
+    demo: '#',
+    pinned: true,
+  },
+  {
     name: 'Pet System',
     visibility: 'Public',
     category: 'Client Project',
