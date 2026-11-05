@@ -12,7 +12,7 @@ export const profile = {
   kernelVersion: 'v2.8.0',
   location: 'Sri Lanka · Remote . Onsite',
   status: 'ONLINE',
-  resumeUrl: 'https://drive.google.com/file/d/15oooGs58y0SPBOtbbwLFHqFrpsm3JfPB/view?usp=sharing', // drop a resume.pdf into /public, or change this link
+  resumeUrl: 'https://drive.google.com/file/d/1eddFlGzP1jVcoAiIaXKRxwjs3LUp9REd/view?usp=sharing', // drop a resume.pdf into /public, or change this link
   avatar: '/images/dev.jpg', // drop your photo into /public/images/dev.jpg
   // Modules shown scrolling under the hero
   loadedModules: ['PHP', 'REACT', 'PYTHON', 'SQL','DOCKER'],
@@ -41,7 +41,7 @@ export const about = {
     },
     {
       cmd: 'experience',
-      out: 'Creating scalable web solutions with React, Node.js, PHP, and modern database technologies. Experienced in building custom WordPress solutions, full-stack applications, and API-driven platforms focused on performance and usability.',
+      out: 'Full Stack Developer who builds fast, scalable web platforms from database to deployment. I work with React, Next.js, Node.js, Spring Boot and PHP, create custom WordPress and WooCommerce solutions, and ship API-driven applications backed by MySQL and MongoDB. I also deploy and automate my own releases on AWS EC2 with GitHub Actions CI/CD, so projects go from code to a live server cleanly. Focused on clean code, performance and a smooth user experience.',
     },
   ],
   stats: [
@@ -66,15 +66,34 @@ export const skills = [
   { name: 'Git', color: 'red' },
   { name: 'HTML5', color: 'amber' },
   { name: 'CSS3', color: 'cyan' },
+  { name: 'AWS EC2', color: 'amber' },
+  { name: 'GitHub Actions (CI/CD)', color: 'green' },
+  { name: 'Self-hosted Runner', color: 'green' },
+  { name: 'Nginx', color: 'cyan' },
+  { name: 'PM2', color: 'magenta' },
+  { name: 'Linux (Ubuntu)', color: 'red' },
 ];
 
 // --- Experience (rendered as a git log) -------------------------------------
 export const experience = [
   {
-    hash: 'e5a6d7b',
+    hash: 'f6b7e8c',
     head: true,
+    company: 'Freelance',
+    period: 'April 2026 — Present',
+    title: 'Freelance Full Stack Developer',
+    description:
+      'Building websites and web applications for clients using React, Next.js, Node.js, PHP, WordPress, and MySQL. Handling requirements, development, deployment, and ongoing maintenance, and adjusting scope based on direct client feedback.',
+    stack: ['React', 'Next.js', 'Node.js', 'PHP', 'WordPress', 'MySQL', 'Tailwind CSS'],
+    insertions: 0,
+    deletions: 0,
+    files: 0,
+  },
+  {
+    hash: 'e5a6d7b',
+    head: false,
     company: 'Domedia',
-    period: 'January 2026 — Present',
+    period: 'January 2026 — July 2026',
     title: 'Trainee Full Stack Developer @ Domedia',
     description:
       'Independently developing custom WordPress themes and plugins and managing WooCommerce e-commerce solutions end-to-end, while delivering SEO-optimized responsive pages and owning client communication, maintenance, and workflow improvements across projects.',
@@ -169,6 +188,21 @@ export const projects = [
     stars: 0,
     forks: 0,
     repo: 'https://github.com/Saas-Rent',
+    demo: '#',
+    pinned: true,
+  },
+  {
+    name: 'CI/CD Deployment Pipeline on AWS EC2',
+    visibility: 'Public',
+    category: 'Self Learning Project',
+    description:
+      'A Node.js/Express REST API connected to MongoDB Atlas, deployed on an Ubuntu AWS EC2 instance. GitHub Actions with a self-hosted runner on the server automates deployment on every push, with PM2 managing the process and Nginx configured as a reverse proxy (port 80 to 8000).',
+    stack: ['Node.js', 'Express.js', 'MongoDB Atlas', 'AWS EC2', 'GitHub Actions', 'PM2', 'Nginx'],
+    language: 'JavaScript',
+    languageColor: '#f1e05a',
+    stars: 0,
+    forks: 0,
+    repo: 'https://github.com/SandaruAbenayake/nodeapp-EC2',
     demo: '#',
     pinned: true,
   },
