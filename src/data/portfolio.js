@@ -41,7 +41,7 @@ export const about = {
     },
     {
       cmd: 'experience',
-      out: 'Full Stack Developer who builds fast, scalable web platforms from database to deployment. I work with React, Next.js, Node.js, Spring Boot and PHP, create custom WordPress and WooCommerce solutions, and ship API-driven applications backed by MySQL and MongoDB. I also deploy and automate my own releases on AWS EC2 with GitHub Actions CI/CD, so projects go from code to a live server cleanly. Focused on clean code, performance and a smooth user experience.',
+      out: 'Full Stack Developer who builds fast, scalable web platforms from database to deployment. I work with React, Next.js, Node.js, Spring Boot and PHP, create custom WordPress and WooCommerce solutions, and ship API-driven applications backed by MySQL and MongoDB. I also deploy and automate releases to AWS-hosted servers with GitHub Actions CI/CD, taking projects from code to a live server cleanly. Focused on clean code, performance and a smooth user experience.',
     },
   ],
   stats: [
@@ -66,7 +66,7 @@ export const skills = [
   { name: 'Git', color: 'red' },
   { name: 'HTML5', color: 'amber' },
   { name: 'CSS3', color: 'cyan' },
-  { name: 'AWS EC2', color: 'amber' },
+  { name: 'AWS Server Deployment', color: 'amber' },
   { name: 'GitHub Actions (CI/CD)', color: 'green' },
   { name: 'Self-hosted Runner', color: 'green' },
   { name: 'Nginx', color: 'cyan' },
@@ -192,12 +192,12 @@ export const projects = [
     pinned: true,
   },
   {
-    name: 'CI/CD Deployment Pipeline on AWS EC2',
+    name: 'CI/CD Deployment Pipeline on AWS',
     visibility: 'Public',
     category: 'Self Learning Project',
     description:
-      'A Node.js/Express REST API connected to MongoDB Atlas, deployed on an Ubuntu AWS EC2 instance. GitHub Actions with a self-hosted runner on the server automates deployment on every push, with PM2 managing the process and Nginx configured as a reverse proxy (port 80 to 8000).',
-    stack: ['Node.js', 'Express.js', 'MongoDB Atlas', 'AWS EC2', 'GitHub Actions', 'PM2', 'Nginx'],
+      'A Node.js/Express REST API connected to MongoDB Atlas, deployed to an Ubuntu server hosted on AWS. GitHub Actions with a self-hosted runner on the server automates deployment on every push, with PM2 managing the process and Nginx configured as a reverse proxy (port 80 to 8000).',
+    stack: ['Node.js', 'Express.js', 'MongoDB Atlas', 'AWS', 'GitHub Actions', 'PM2', 'Nginx'],
     language: 'JavaScript',
     languageColor: '#f1e05a',
     stars: 0,
