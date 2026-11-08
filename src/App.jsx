@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
-import Skills from './components/Skills.jsx';
+import SkillTree from './components/SkillTree.jsx';
 import Experience from './components/Experience.jsx';
 import Projects from './components/Projects.jsx';
 import Blogs from './components/Blogs.jsx';
@@ -20,7 +20,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
+        <SkillTree />
         <Experience />
         <Projects />
         <Blogs />

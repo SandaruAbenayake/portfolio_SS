@@ -625,54 +625,6 @@ main {
 }
 
 /* ===========================================================================
-   SKILLS
-   =========================================================================== */
-.skills__universe {
-  position: relative;
-  min-height: 360px;
-  border: 1px dashed var(--border-bright);
-  border-radius: var(--radius);
-  background: radial-gradient(circle at 50% 50%, rgba(56, 225, 255, 0.04), transparent 60%);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-content: center;
-  justify-content: center;
-  padding: 40px;
-  overflow: hidden;
-}
-.skills__center {
-  position: absolute;
-  font-family: var(--font-mono);
-  font-size: 5rem;
-  color: rgba(255, 255, 255, 0.03);
-  pointer-events: none;
-  user-select: none;
-}
-.skill-chip {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.84rem;
-  color: var(--text);
-  background: var(--panel);
-  border: 1px solid var(--border-bright);
-  padding: 9px 15px;
-  border-radius: 999px;
-  cursor: grab;
-  user-select: none;
-}
-.skill-chip:active { cursor: grabbing; }
-.skill-chip__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-/* ===========================================================================
    EXPERIENCE — git log
    =========================================================================== */
 .gitlog { padding-left: 6px; }
@@ -1293,28 +1245,6 @@ main {
   .field-row { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .footer__inner { flex-direction: column; text-align: center; }
-
-  .skills__universe {
-    min-height: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-content: center;
-    gap: 9px;
-    padding: 16px;
-  }
-  .skill-chip {
-    width: 100%;
-    min-width: 0;
-    justify-content: flex-start;
-    gap: 7px;
-    padding: 9px 10px;
-    font-size: clamp(0.65rem, 3vw, 0.76rem);
-    white-space: normal;
-    text-align: left;
-    overflow-wrap: anywhere;
-    touch-action: pan-y;
-  }
-  .skill-chip__dot { flex: 0 0 8px; }
 
   .commit { grid-template-columns: 20px minmax(0, 1fr); gap: 12px; }
   .commit__period { margin-left: 0; }
