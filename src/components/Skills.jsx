@@ -5,6 +5,9 @@ import SectionHeading from './SectionHeading.jsx';
 
 export default function Skills() {
   const constraintsRef = useRef(null);
+  const canDragSkills =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   return (
     <section id="skills" className="section">
@@ -28,7 +31,7 @@ export default function Skills() {
             key={skill.name}
             type="button"
             className={`skill-chip accent-border-${skill.color}`}
-            drag
+            drag={canDragSkills}
             dragConstraints={constraintsRef}
             dragElastic={0.18}
             dragMomentum={false}

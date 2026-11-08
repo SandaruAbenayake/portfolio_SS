@@ -277,6 +277,7 @@ main {
   align-items: center;
   gap: 16px;
   margin-bottom: 36px;
+  min-width: 0;
 }
 .section-heading__title,
 .section-heading__cmd {
@@ -297,6 +298,11 @@ main {
   font-size: 0.82rem;
   color: var(--text-faint);
   margin: -22px 0 26px;
+}
+.section-heading__title,
+.section-heading__cmd {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .prompt { color: var(--green); }
 .arrow { color: var(--magenta); }
@@ -776,9 +782,11 @@ main {
    =========================================================================== */
 .repos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 20px;
 }
+.repos > div,
+.blog-list > div { min-width: 0; }
 .repo {
   border: 1px solid var(--border-bright);
   border-radius: var(--radius);
@@ -794,7 +802,8 @@ main {
 .repo__top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px;
 }
 .repo__name {
   display: inline-flex;
@@ -804,6 +813,8 @@ main {
   font-weight: 600;
   color: var(--cyan);
   font-size: 0.98rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .repo__icon { color: var(--text-faint); }
 .repo__vis {
@@ -846,6 +857,7 @@ main {
 .repo__meta {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
   font-family: var(--font-mono);
   font-size: 0.76rem;
@@ -903,7 +915,7 @@ main {
 }
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 20px;
 }
 .blog-card {
@@ -938,6 +950,8 @@ main {
   font-family: var(--font-display);
   font-size: 1.1rem;
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .blog-card__ext { color: var(--text-faint); flex-shrink: 0; }
 .blog-card__excerpt {
@@ -1095,6 +1109,8 @@ main {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 .json-card__waiting {
   font-family: var(--font-mono);
@@ -1141,6 +1157,8 @@ main {
 }
 .field input,
 .field textarea {
+  width: 100%;
+  min-width: 0;
   font-family: var(--font-body);
   font-size: 0.92rem;
   color: var(--text);
@@ -1189,6 +1207,7 @@ main {
 .footer__brand {
   font-family: var(--font-mono);
   font-size: 0.92rem;
+  overflow-wrap: anywhere;
 }
 .footer__name { color: var(--text); font-weight: 600; }
 .footer__role { color: var(--text-faint); }
@@ -1254,14 +1273,65 @@ main {
   .about__grid { grid-template-columns: 1fr; }
   .profile-card { max-width: 360px; }
   .contact__grid { grid-template-columns: 1fr; }
+  .about__grid { gap: 24px; }
+  .repos,
+  .blog-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 }
 
 @media (max-width: 560px) {
-  .section { padding: 70px 18px; }
+  .section { padding: 68px 16px; }
   .hero { padding-top: calc(var(--nav-h) + 40px); }
+  .hero__title { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .hero__sub { font-size: 0.98rem; }
+  .hero__cta { gap: 10px; }
+  .hero__cta .btn { flex: 1 1 auto; justify-content: center; }
+  .kernel-badge { max-width: 100%; font-size: 0.65rem; letter-spacing: 0.025em; }
+  .section-heading { gap: 10px; margin-bottom: 28px; }
+  .section-heading__title,
+  .section-heading__cmd { white-space: normal; font-size: clamp(1.1rem, 5.5vw, 1.45rem); }
+  .section-hint { font-size: 0.74rem; margin-top: -16px; }
   .field-row { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .footer__inner { flex-direction: column; text-align: center; }
+
+  .skills__universe {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
+    gap: 9px;
+    padding: 16px;
+  }
+  .skill-chip {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 7px;
+    padding: 9px 10px;
+    font-size: clamp(0.65rem, 3vw, 0.76rem);
+    white-space: normal;
+    text-align: left;
+    overflow-wrap: anywhere;
+    touch-action: pan-y;
+  }
+  .skill-chip__dot { flex: 0 0 8px; }
+
+  .commit { grid-template-columns: 20px minmax(0, 1fr); gap: 12px; }
+  .commit__period { margin-left: 0; }
+  .commit__stat { gap: 8px 12px; font-size: 0.68rem; }
+  .repo { padding: 18px; }
+  .repo__top { flex-wrap: wrap; }
+  .repo__meta { gap: 12px; }
+  .repo__demo { margin-left: 0; }
+  .blog-card { padding: 18px; }
+  .blog-modal__header { align-items: flex-start; gap: 10px; padding-right: 32px; }
+  .blog-modal__icon { width: 40px; height: 40px; }
+  .blog-modal__title { font-size: 1.12rem; overflow-wrap: anywhere; }
+  .blog-modal__meta-row { grid-template-columns: 76px minmax(0, 1fr); gap: 8px; }
+  .blog-modal__meta-row dd { overflow-wrap: anywhere; }
+  .compose__body { padding: 16px; }
+  .compose__route { font-size: 0.67rem; }
+  .footer { padding: 32px 16px 24px; }
 
   .blog-modal-overlay { padding: 0; align-items: flex-end; }
   .blog-modal {
