@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FiArrowUpRight, FiX } from 'react-icons/fi';
 import { blogs } from '../data/portfolio.js';
 import SectionHeading from './SectionHeading.jsx';
+import BlogContent from './BlogContent.jsx';
 
 export default function Blogs() {
   const hasBlogs = blogs && blogs.length > 0;
@@ -90,7 +91,7 @@ export default function Blogs() {
             transition={{ duration: 0.2 }}
           >
             <motion.div
-              className="blog-modal"
+              className={`blog-modal${active.blocks ? ' blog-modal--tutorial' : ''}`}
               role="dialog"
               aria-modal="true"
               aria-label={active.title}
@@ -141,21 +142,7 @@ export default function Blogs() {
                   </dl>
                 )}
 
-                {(active.sections || []).map((s) => (
-                  <div className="blog-modal__section" key={s.heading}>
-                    <h4>{s.heading}</h4>
-                    {(s.body || []).map((p, idx) => (
-                      <p key={idx}>{p}</p>
-                    ))}
-                    {s.list && (
-                      <ul>
-                        {s.list.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
+                <BlogContent post={active} />
               </div>
             </motion.div>
           </motion.div>
