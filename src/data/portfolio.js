@@ -146,6 +146,22 @@ export const experience = [
 // --- Projects (GitHub-repo styled cards) ------------------------------------
 export const projects = [
   {
+    name: 'UserDesk AI - AI-Powered User Management System',
+    visibility: 'Public',
+    category: 'Personal Project',
+    status: 'In Progress',
+    description:
+      'Developed and deployed an AI-powered user management REST API using Node.js, Express.js and MongoDB Atlas, integrating the Google Gemini API for AI-powered profile summaries, personalized welcome messages and administrative content generation. Deployed the backend on an Ubuntu AWS EC2 instance with PM2 and Nginx as a reverse proxy, with a React frontend hosted on Vercel. Automated deployments with a GitHub Actions CI/CD pipeline using a self-hosted runner on EC2.',
+    stack: ['React', 'Vite', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Google Gemini API', 'AWS EC2', 'Ubuntu Linux', 'GitHub Actions', 'PM2', 'Nginx', 'Vercel'],
+    language: 'JavaScript',
+    languageColor: '#f1e05a',
+    stars: 0,
+    forks: 0,
+    repo: 'https://github.com/UserDeskAI',
+    demo: '#',
+    pinned: true,
+  },
+  {
     name: 'Palm Harvest Pro',
     visibility: 'Public',
     category: 'Uni Final Year Project',
@@ -188,21 +204,6 @@ export const projects = [
     stars: 0,
     forks: 0,
     repo: 'https://github.com/Saas-Rent',
-    demo: '#',
-    pinned: true,
-  },
-  {
-    name: 'CI/CD Deployment Pipeline on AWS',
-    visibility: 'Public',
-    category: 'Self Learning Project',
-    description:
-      'A Node.js/Express REST API connected to MongoDB Atlas, deployed to an Ubuntu server hosted on AWS. GitHub Actions with a self-hosted runner on the server automates deployment on every push, with PM2 managing the process and Nginx configured as a reverse proxy (port 80 to 8000).',
-    stack: ['Node.js', 'Express.js', 'MongoDB Atlas', 'AWS', 'GitHub Actions', 'PM2', 'Nginx'],
-    language: 'JavaScript',
-    languageColor: '#f1e05a',
-    stars: 0,
-    forks: 0,
-    repo: 'https://github.com/SandaruAbenayake/nodeapp-EC2',
     demo: '#',
     pinned: true,
   },
