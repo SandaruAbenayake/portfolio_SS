@@ -2,9 +2,9 @@
 name: Deploy to GitHub Pages Portfolio V2
 
 on:
-  # Runs on pushes targeting the default branch
+  # Deploys the branch currently used for the portfolio
   push:
-    branches: ["portfolio_v2"]
+    branches: ["new-branch"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
