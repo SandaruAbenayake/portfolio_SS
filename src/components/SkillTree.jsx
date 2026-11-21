@@ -191,7 +191,7 @@ export default function SkillTree() {
   const chooseFilter = useCallback((branch) => {
     setFilter(branch);
     setHovered(null);
-    setCamera((current) => {
+    setCamera(() => {
       if (branch === 'all') return { x: 0, y: 0, scale: 1 };
       const branchNodes = skillNodes.filter((node) => (node.branches || [node.branch]).includes(branch));
       const center = branchNodes.reduce((acc, node) => ({ x: acc.x + node.x, y: acc.y + node.y }), { x: 0, y: 0 });

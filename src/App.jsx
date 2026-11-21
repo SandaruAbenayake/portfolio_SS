@@ -4,6 +4,7 @@ import About from './components/About.jsx';
 import SkillTree from './components/SkillTree.jsx';
 import Experience from './components/Experience.jsx';
 import Projects from './components/Projects.jsx';
+import MLProjects from './components/MLProjects.jsx';
 import Blogs from './components/Blogs.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
@@ -23,6 +24,7 @@ export default function App() {
         <SkillTree />
         <Experience />
         <Projects />
+        <MLProjects />
         <Blogs />
         <Contact />
       </main>

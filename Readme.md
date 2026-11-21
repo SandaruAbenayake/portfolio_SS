@@ -39,6 +39,7 @@ src/
     Blogs.jsx           # posts (with empty-state fallback)
     Contact.jsx         # JSON viewer + compose form
     Footer.jsx
+    MLProjects.jsx        # AI / computer vision demo showcase
 public/
   favicon.svg
   images/avatar.jpg     # ← add your photo here

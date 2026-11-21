@@ -1302,6 +1302,186 @@ main {
   color: var(--text-faint);
 }
 
+/* ---- AI / computer vision projects -------------------------------------- */
+.ml-section {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(56, 225, 255, 0.025), transparent 35%);
+}
+
+.ml-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.ml-project {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(16, 21, 31, 0.82);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+.ml-project__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: #070a10;
+}
+
+.ml-project__video,
+.ml-project__placeholder {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #070a10;
+}
+
+.ml-project__placeholder {
+  position: relative;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.ml-project__placeholder svg {
+  width: 44px;
+  height: 44px;
+  color: var(--magenta);
+}
+
+.ml-project__placeholder small {
+  color: var(--text-faint);
+  font-size: 0.65rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.ml-project__placeholder-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.45;
+  mask-image: radial-gradient(circle at 50% 50%, #000, transparent 72%);
+}
+
+.ml-project__scan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(transparent 49%, rgba(56, 225, 255, 0.08) 50%, transparent 51%);
+  background-size: 100% 6px;
+  mix-blend-mode: screen;
+}
+
+.ml-project__live {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid rgba(56, 225, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(9, 13, 19, 0.78);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+}
+
+.ml-project__live span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+}
+
+.ml-project__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+}
+
+.ml-project__eyebrow {
+  margin-bottom: 8px;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.ml-project--magenta .ml-project__eyebrow {
+  color: var(--magenta);
+}
+
+.ml-project__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.ml-project__description {
+  margin-top: 14px;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.ml-project__highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.ml-project__highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.ml-project__highlight svg {
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+.ml-project__tags {
+  margin-bottom: 22px;
+}
+
+.ml-project__link {
+  align-self: flex-start;
+}
+
+.ml-project__external {
+  margin-left: 2px;
+  font-size: 0.78rem;
+}
+
 /* ===========================================================================
    RESPONSIVE
    =========================================================================== */
@@ -1337,6 +1517,10 @@ main {
   .about__grid { gap: 24px; }
   .repos,
   .blog-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .ml-projects { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -1379,6 +1563,9 @@ main {
   .compose__body { padding: 16px; }
   .compose__route { font-size: 0.67rem; }
   .footer { padding: 32px 16px 24px; }
+  .ml-projects { grid-template-columns: 1fr; gap: 16px; }
+  .ml-project__body { padding: 20px 18px; }
+  .ml-project__highlights { grid-template-columns: 1fr; }
 
   .blog-modal-overlay { padding: 0; align-items: flex-end; }
   .blog-modal {

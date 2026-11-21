@@ -145,7 +145,7 @@ export default function Hero() {
             <button className="editor__run">
               <FiArrowRight /> Run Profile
             </button>
-            <HashLink smooth to="https://github.com/SandaruAbenayake?tab=repositories" className="editor__view">
+            <HashLink smooth to="#projects" className="editor__view">
               View Projects
             </HashLink>
           </div>

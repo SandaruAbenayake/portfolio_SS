@@ -64,7 +64,7 @@ export default function Contact() {
               </div>
             ))}
           </pre>
-          <p className="json-card__waiting">// Waiting for connection…<span className="caret">_</span></p>
+          <p className="json-card__waiting">{'// Waiting for connection…'}<span className="caret">_</span></p>
         </motion.div>
 
         {/* compose form */}
@@ -117,7 +117,7 @@ export default function Contact() {
               />
             </label>
 
-            <p className="compose__note">// Protected by spam filters and rate limits</p>
+            <p className="compose__note">{'// Protected by spam filters and rate limits'}</p>
 
             <button className="btn btn--primary compose__send" onClick={handleSubmit}>
               {sent ? (

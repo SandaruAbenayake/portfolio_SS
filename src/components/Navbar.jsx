@@ -10,6 +10,7 @@ const links = [
   { label: 'Skills', to: '#skills' },
   { label: 'Experience', to: '#experience' },
   { label: 'Projects', to: '#projects' },
+  { label: 'AI & ML', to: '#ml-projects' },
   { label: 'Blogs', to: '#blogs' },
   { label: 'Contact', to: '#contact' },
 ];

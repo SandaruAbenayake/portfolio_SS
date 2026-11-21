@@ -15,7 +15,7 @@ export const profile = {
   resumeUrl: 'https://drive.google.com/file/d/1eddFlGzP1jVcoAiIaXKRxwjs3LUp9REd/view?usp=sharing', // drop a resume.pdf into /public, or change this link
   avatar: '/images/dev.jpg', // drop your photo into /public/images/dev.jpg
   // Modules shown scrolling under the hero
-  loadedModules: ['PHP', 'REACT', 'PYTHON', 'SQL','DOCKER'],
+  loadedModules: ['PHP', 'REACT', 'PYTHON', 'OPENCV', 'DOCKER'],
 };
 
 export const social = {
@@ -237,50 +237,41 @@ export const projects = [
     demo: '#',
     pinned: true,
   },
+];
+
+// --- AI / Computer Vision demonstrations ------------------------------------
+export const mlProjects = [
   {
-    name: 'Pahana Edu',
-    visibility: 'Public',
-    category: 'Uni Project',
+    title: 'Face Mask Detection',
+    eyebrow: 'REAL-TIME COMPUTER VISION',
     description:
-      'A desktop bookshop management system built with Java Servlets and JDBC, designed to manage books, customers, and orders with strong OOP architecture.',
-    stack: ['Java', 'Servlets', 'MySQL', 'JDBC'],
-    language: 'Java',
-    languageColor: '#b07219',
-    stars: 22,
-    forks: 4,
-    repo: 'https://github.com/SandaruAbenayake/pahana_edu',
-    demo: '#',
-    pinned: true,
+      'A real-time face mask classification system that captures webcam frames, detects faces, and predicts whether a person is wearing a mask. The project combines transfer learning with OpenCV so the model can move beyond notebook experiments into a live visual demonstration.',
+    highlights: [
+      'Live webcam inference',
+      'MobileNetV2 transfer learning',
+      'CNN-based image classification',
+      'Model training documented in Jupyter',
+    ],
+    stack: ['Python', 'TensorFlow', 'MobileNetV2', 'OpenCV', 'Jupyter'],
+    video: '/videos/mask-vedio.mp4',
+    repo: 'https://github.com/SandaruAbenayake/face-mask-detector',
+    accent: 'cyan',
   },
   {
-    name: 'SK Salon',
-    visibility: 'Public',
-    category: 'Self Learning Project',
+    title: 'Volume Balance',
+    eyebrow: 'GESTURE-CONTROLLED AUDIO',
     description:
-      'A salon booking system with separate customer and admin portals, mock payment webhook simulation, JWT authentication, and owner dashboard for booking approvals and schedule management.',
-    stack: ['React', 'Node.js', 'Express', 'MySQL', 'JWT', 'Material-UI'],
-    language: 'JavaScript',
-    languageColor: '#f1e05a',
-    stars: 36,
-    forks: 8,
-    repo: 'https://github.com/SandaruAbenayake/SK_saloon',
-    demo: '#',
-    pinned: true,
-  },
-  {
-    name: 'Flutter Restaurant App',
-    visibility: 'Public',
-    category: 'Uni Project',
-    description:
-      'A mobile restaurant ordering system built with Flutter, featuring menu browsing and an ordering flow for customers.',
-    stack: ['Flutter', 'Dart'],
-    language: 'Dart',
-    languageColor: '#00B4AB',
-    stars: 14,
-    forks: 2,
-    repo: 'https://github.com/SandaruAbenayake/Flutter-Restaurant_App',
-    demo: '#',
-    pinned: true,
+      'A contact-free music controller that interprets real-time hand landmarks from a webcam. The distance between the thumb and index finger adjusts Pygame music playback volume, demonstrating gesture recognition, visual feedback, and audio integration with MediaPipe and OpenCV.',
+    highlights: [
+      'MediaPipe hand tracking',
+      'Real-time gesture processing',
+      'Gesture-based music volume control',
+      'Live webcam visual feedback',
+    ],
+    stack: ['Python', 'OpenCV', 'MediaPipe', 'Pygame'],
+    video: '/videos/volume-balance.mp4',
+    repo: 'https://github.com/SandaruAbenayake/volume-balance',
+    accent: 'magenta',
   },
 ];
 
