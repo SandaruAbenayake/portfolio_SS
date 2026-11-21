@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import {
   FiActivity, FiBox, FiCloud, FiCode, FiCpu, FiDatabase, FiGitBranch,
   FiGlobe, FiLayers, FiLink, FiPackage, FiServer, FiShoppingBag,
-  FiTerminal, FiUser, FiX, FiZap,
+  FiTerminal, FiUser, FiX, FiZap, FiEye,
 } from 'react-icons/fi';
 import { skillEdges, skillNodes, skillTreeConfig } from '../data/skills.js';
 import SectionHeading from './SectionHeading.jsx';
@@ -16,6 +16,8 @@ const icons = {
   java: FiCpu, mysql: FiDatabase, mongodb: FiDatabase, wordpress: FiGlobe, woocommerce: FiShoppingBag,
   linux: FiTerminal, git: FiGitBranch, actions: FiActivity, runner: FiTerminal,
   docker: FiBox, nginx: FiServer, pm2: FiActivity, aws: FiCloud,
+  opencv: FiEye, cnn: FiCpu, tensorflow: FiActivity, mobilenetv2: FiCpu,
+  mediapipe: FiActivity, jupyter: FiCode,
 };
 
 const edgeId = (a, b) => [a, b].sort().join(':');
@@ -139,7 +141,9 @@ export default function SkillTree() {
   const [filter, setFilter] = useState('all');
   const [hovered, setHovered] = useState(null);
   const [selected, setSelected] = useState(null);
-  const [expanded, setExpanded] = useState({ frontend: true, backend: true, devops: true });
+  const [expanded, setExpanded] = useState(() => Object.fromEntries(
+    skillTreeConfig.branches.map(({ id }) => [id, true])
+  ));
   const [camera, setCamera] = useState({ x: 0, y: 0, scale: 1 });
 
   useEffect(() => {
@@ -201,8 +205,9 @@ export default function SkillTree() {
       const scale = 1.22;
       return { x: (bounds?.width || 900) / 2 - (x / skillTreeConfig.viewBox.width) * (bounds?.width || 900) * scale, y: (bounds?.height || 620) / 2 - (y / skillTreeConfig.viewBox.height) * (bounds?.height || 620) * scale, scale };
     });
-    if (branch !== 'all') setExpanded({ frontend: branch === 'frontend', backend: branch === 'backend', devops: branch === 'devops' });
-    else setExpanded({ frontend: true, backend: true, devops: true });
+    setExpanded(Object.fromEntries(
+      skillTreeConfig.branches.map(({ id }) => [id, branch === 'all' || id === branch])
+    ));
   }, []);
 
   const startPan = (event) => {

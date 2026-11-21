@@ -1,4 +1,4 @@
-/** @typedef {'frontend' | 'backend' | 'devops' | 'hub'} SkillBranchId */
+/** @typedef {'frontend' | 'backend' | 'devops' | 'ai' | 'hub'} SkillBranchId */
 /** @typedef {'core' | 'advanced' | 'supporting'} SkillTier */
 /**
  * @typedef {Object} SkillNodeData
@@ -26,6 +26,7 @@ export const skillTreeConfig = {
     frontend: '#22d3ee',
     backend: '#34d399',
     devops: '#fb923c',
+    ai: '#c084fc',
     special: '#c084fc',
     hub: '#dbeafe',
   },
@@ -34,6 +35,7 @@ export const skillTreeConfig = {
     { id: 'frontend', label: 'Frontend', color: '#22d3ee' },
     { id: 'backend', label: 'Backend', color: '#34d399' },
     { id: 'devops', label: 'DevOps', color: '#fb923c' },
+    { id: 'ai', label: 'AI & ML', color: '#c084fc' },
   ],
 };
 
@@ -49,7 +51,13 @@ export const skillNodes = [
   { id: 'framer-motion', name: 'Framer Motion', branch: 'frontend', special: true, x: 590, y: 50, tier: 'supporting', proficiency: 62, years: '1+ year overall', description: 'Motion and transitions that make interface state changes feel clear.', projects: ['Portfolio'] },
   { id: 'nextjs', name: 'Next.js', branch: 'frontend', x: 700, y: 70, tier: 'advanced', proficiency: 70, years: '1+ year overall', description: 'React framework for structured, production-ready web applications.', projects: ['Freelance client work'] },
   { id: 'vercel', name: 'Vercel', branch: 'frontend', x: 480, y: 70, tier: 'supporting', proficiency: 62, years: '1+ year overall', description: 'Hosting and deploying React frontend applications.', projects: ['UserDesk AI - AI-Powered User Management System'] },
-  { id: 'python', name: 'Python', branch: 'backend', x: 800, y: 45, tier: 'advanced', proficiency: 76, years: '1+ year overall', description: 'Backend services and machine-learning workflows.', projects: ['Palm Harvest Pro'] },
+  { id: 'python', name: 'Python', branch: 'backend', branches: ['backend', 'ai'], x: 800, y: 45, tier: 'advanced', proficiency: 76, years: '1+ year overall', description: 'Backend development and project-based computer vision and machine-learning work.', projects: ['Palm Harvest Pro', 'Face Mask Detection', 'Volume Balance'] },
+  { id: 'opencv', name: 'OpenCV', branch: 'ai', x: 70, y: 50, tier: 'advanced', proficiency: 70, years: 'Project-based learning', description: 'Capturing and processing webcam frames for real-time computer vision applications.', projects: ['Face Mask Detection', 'Volume Balance'] },
+  { id: 'cnn', name: 'CNN Classification', branch: 'ai', x: 185, y: 50, tier: 'supporting', proficiency: 65, years: 'Project-based learning', description: 'Applying convolutional neural networks to image-based face mask classification.', projects: ['Face Mask Detection'] },
+  { id: 'tensorflow', name: 'TensorFlow', branch: 'ai', x: 320, y: 50, tier: 'supporting', proficiency: 64, years: 'Project-based learning', description: 'Training and using a deep-learning image classification model.', projects: ['Face Mask Detection'] },
+  { id: 'mobilenetv2', name: 'MobileNetV2', branch: 'ai', x: 70, y: 150, tier: 'supporting', proficiency: 64, years: 'Project-based learning', description: 'Using transfer learning with a lightweight pretrained model for face mask detection.', projects: ['Face Mask Detection'] },
+  { id: 'mediapipe', name: 'MediaPipe Hands', branch: 'ai', x: 185, y: 150, tier: 'supporting', proficiency: 68, years: 'Project-based learning', description: 'Tracking hand landmarks from webcam frames to recognize gesture input.', projects: ['Volume Balance'] },
+  { id: 'jupyter', name: 'Jupyter Notebook', branch: 'ai', x: 320, y: 150, tier: 'supporting', proficiency: 70, years: 'Project-based learning', description: 'Developing and documenting experiments in an interactive Python notebook.', projects: ['Face Mask Detection', 'Volume Balance'] },
   { id: 'flask', name: 'Flask', branch: 'backend', x: 870, y: 145, tier: 'supporting', proficiency: 62, years: '1+ year overall', description: 'Lightweight Python APIs and service endpoints.', projects: ['Palm Harvest Pro'] },
   { id: 'node', name: 'Node.js', branch: 'backend', x: 820, y: 270, tier: 'core', proficiency: 82, years: '1+ year overall', description: 'Server-side JavaScript for APIs and full-stack application services.', projects: ['SK Salon', 'Palm Harvest Pro', 'UserDesk AI - AI-Powered User Management System'] },
   { id: 'gemini', name: 'Google Gemini API', branch: 'backend', x: 875, y: 225, tier: 'supporting', proficiency: 62, years: '1+ year overall', description: 'Generative AI integration for profile summaries, welcome messages, and administrative content.', projects: ['UserDesk AI - AI-Powered User Management System'] },
@@ -73,6 +81,8 @@ export const skillNodes = [
 
 export const skillEdges = [
   ['hub', 'javascript'], ['html', 'css'], ['css', 'javascript'],
+  ['hub', 'opencv'], ['opencv', 'cnn'], ['cnn', 'tensorflow'], ['cnn', 'mobilenetv2'],
+  ['opencv', 'mediapipe'], ['mediapipe', 'jupyter'],
   ['javascript', 'typescript'], ['typescript', 'react'], ['react', 'framer-motion'], ['react', 'nextjs'], ['react', 'vercel'],
   ['javascript', 'node'], ['node', 'rest'], ['node', 'gemini'], ['python', 'flask'], ['flask', 'rest'], ['react', 'rest'],
   ['rest', 'php'], ['php', 'wordpress'], ['wordpress', 'woocommerce'], ['rest', 'java'], ['java', 'spring'], ['spring', 'mysql'], ['mysql', 'mongodb'],
